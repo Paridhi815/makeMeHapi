@@ -9,4 +9,10 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Response status for invalid path:', (done) => {
+    server.inject('/hello/hi', (response) => {
+      expect(response.statusCode).toBe(404);
+      done();
+    });
+  });
 });
