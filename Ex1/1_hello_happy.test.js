@@ -16,4 +16,10 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Reply:', (done) => {
+    server.inject('/', (response) => {
+      expect(response.payload).toBe('Hello hapi');
+      done();
+    });
+  });
 });
