@@ -21,5 +21,11 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Reply:', (done) => {
+    server.inject('/chickens/pari', (response) => {
+      expect(typeof response.result).toBe('string');
+      done();
+    });
+  });
 });
 
