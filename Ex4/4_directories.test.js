@@ -28,4 +28,14 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Response status for invalid path:', (done) => {
+    const options = {
+      method: 'GET',
+      url: '/foo/bar/baz/ewfrtbhy',
+    };
+    server.inject(options, (response) => {
+      expect(response.statusCode).toBe(404);
+      done();
+    });
+  });
 });
