@@ -15,5 +15,11 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Reply:', (done) => {
+    server.inject('/', (response) => {
+      expect(response.result).toBe('Gur Chefhvg bs Uncv-arff');
+      done();
+    });
+  });
 });
 
