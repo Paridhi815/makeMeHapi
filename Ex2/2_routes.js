@@ -17,10 +17,11 @@ server.route({
 
 
 // to make the server listen to the assigned port
-server.start((err) => {
-  if (err) { throw err; }
-  console.log('Server running at:', server.info.uri);
-});
-
+if (!module.parent) {
+  server.start((err) => {
+    if (err) { throw err; }
+    console.log('Server running at:', server.info.uri);
+  });
+}
 
 module.exports = server;
