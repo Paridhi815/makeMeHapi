@@ -38,4 +38,14 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Reply:', (done) => {
+    const options = {
+      method: 'GET',
+      url: '/foo/bar/baz/file.html',
+    };
+    server.inject(options, (response) => {
+      expect(response.result).toBe(html);
+      done();
+    });
+  });
 });
