@@ -22,5 +22,11 @@ describe('Testing Hapi Using Inject:', () => {
       done();
     });
   });
+  test('Check Reply:', (done) => {
+    server.inject('/?name=hapi', (response) => {
+      expect(response.result).toBe(html);
+      done();
+    });
+  });
 });
 
